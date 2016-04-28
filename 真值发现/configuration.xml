@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<configuration>
+
+	<property>
+  		<name>org.er.workdir</name>
+  		<value>TruthDiscovery/</value>
+  		<description>工作目录</description>
+	</property>
+	<property>
+		<name>org.er.config</name>
+		<value>/home/ning/workspace/configuration.xml</value>
+		<description>配置文件存放位置</description>
+	</property>
+	<property>
+  		<name>org.er.propertyNum</name>
+  		<value>7</value>
+  		<description>属性维度</description>
+	</property>
+	<property>
+  		<name>org.er.num.reduceTask</name>
+ 		<value>2</value>
+  		<description>并行度</description>
+	</property>
+	
+</configuration>
+

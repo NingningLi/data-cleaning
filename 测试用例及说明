@@ -1,0 +1,835 @@
+			各模块测试用例及操作说明
+____________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________
+缺失值填充模块
+1.测试用例：
+testdata:
+1	01|908|1111111|Mike|Tree Ave.|MH|07974
+2	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+3	01|908|1111111|David|Tree Ave.|MH|03333
+4	01|908|6666666|JoJo|Tree Ave.|MH|07974
+5	01|212|2222222|Joe|Elm St.|GLA|01201
+6	01|212|2222222|Jim|Elm Str.|NYC|01299
+7	01|212|2222222|Eline|Elm Str.|GLA|01201
+8	01|215|3333333|Ben|Oak Ave.|P|34394
+9	01|215|4444444|Jane|Mel St.|PHI|06873
+10	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+11	44|131|5555555|Anna|High St.|EBI|EH4IDT
+12	44|141|5555555|Caral|High Str.|GL|EH4IDT
+13	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+14	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+15	?|212|2132132|Joe|Elm St.|GLA|012
+16	?|22|2221222|Jim C|Elm Str.|NYC|0299
+17	01|908|1111111|Mike|Tree Ave.|MH|07974
+18	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+19	01|908|1111111|David|Tree Ave.|MH|03333
+20	01|908|6666666|JoJo|Tree Ave.|MH|07974
+21	01|212|2222222|Joe|Elm St.|GLA|01201
+22	01|212|2222222|Jim|Elm Str.|NYC|01299
+23	01|212|2222222|Eline|Elm Str.|GLA|01201
+24	01|215|3333333|Ben|Oak Ave.|P|34394
+25	01|215|4444444|Jane|Mel St.|PHI|06873
+26	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+27	44|131|5555555|Anna|High St.|EBI|EH4IDT
+28	44|141|5555555|Caral|High Str.|GL|EH4IDT
+29	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+30	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+31	?|212|2132132|Joe|Elm St.|GLA|012
+32	?|22|2221222|Jim C|Elm Str.|NYC|0299
+33	01|908|1111111|Mike|Tree Ave.|MH|07974
+34	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+35	01|908|1111111|David|Tree Ave.|MH|03333
+36	01|908|6666666|JoJo|Tree Ave.|MH|07974
+37	01|212|2222222|Joe|Elm St.|GLA|01201
+38	01|212|2222222|Jim|Elm Str.|NYC|01299
+39	01|212|2222222|Eline|Elm Str.|GLA|01201
+40	01|215|3333333|Ben|Oak Ave.|P|34394
+41	01|215|4444444|Jane|Mel St.|PHI|06873
+42	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+43	44|131|5555555|Anna|High St.|EBI|EH4IDT
+44	44|141|5555555|Caral|High Str.|GL|EH4IDT
+45	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+46	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+47	?|212|2132132|Joe|Elm St.|GLA|012
+48	?|22|2221222|Jim C|Elm Str.|NYC|0299
+49	01|908|1111111|Mike|Tree Ave.|MH|07974
+50	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+51	01|908|1111111|David|Tree Ave.|MH|03333
+52	01|908|6666666|JoJo|Tree Ave.|MH|07974
+53	01|212|2222222|Joe|Elm St.|GLA|01201
+54	01|212|2222222|Jim|Elm Str.|NYC|01299
+55	01|212|2222222|Eline|Elm Str.|GLA|01201
+56	01|215|3333333|Ben|Oak Ave.|P|34394
+57	01|215|4444444|Jane|Mel St.|PHI|06873
+58	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+59	44|131|5555555|Anna|High St.|EBI|EH4IDT
+60	44|141|5555555|Caral|High Str.|GL|EH4IDT
+61	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+62	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+63	?|212|2132132|Joe|Elm St.|GLA|012
+64	?|22|2221222|Jim C|Elm Str.|NYC|0299
+65	01|908|1111111|Mike|Tree Ave.|MH|07974
+66	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+67	01|908|1111111|David|Tree Ave.|MH|03333
+68	01|908|6666666|JoJo|Tree Ave.|MH|07974
+69	01|212|2222222|Joe|Elm St.|GLA|01201
+70	01|212|2222222|Jim|Elm Str.|NYC|01299
+71	01|212|2222222|Eline|Elm Str.|GLA|01201
+72	01|215|3333333|Ben|Oak Ave.|P|34394
+73	01|215|4444444|Jane|Mel St.|PHI|06873
+74	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+75	44|131|5555555|Anna|High St.|EBI|EH4IDT
+76	44|141|5555555|Caral|High Str.|GL|EH4IDT
+77	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+78	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+79	?|212|2132132|Joe|Elm St.|GLA|012
+80	?|22|2221222|Jim C|Elm Str.|NYC|0299
+81	01|908|1111111|Mike|Tree Ave.|MH|07974
+82	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+83	01|908|1111111|David|Tree Ave.|MH|03333
+84	01|908|6666666|JoJo|Tree Ave.|MH|07974
+85	01|212|2222222|Joe|Elm St.|GLA|01201
+86	01|212|2222222|Jim|Elm Str.|NYC|01299
+87	01|212|2222222|Eline|Elm Str.|GLA|01201
+88	01|215|3333333|Ben|Oak Ave.|P|34394
+89	01|215|4444444|Jane|Mel St.|PHI|06873
+90	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+91	44|131|5555555|Anna|High St.|EBI|EH4IDT
+92	44|141|5555555|Caral|High Str.|GL|EH4IDT
+93	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+94	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+95	?|212|2132132|Joe|Elm St.|GLA|012
+96	?|22|2221222|Jim C|Elm Str.|NYC|0299
+97	01|908|1111111|Mike|Tree Ave.|MH|07974
+98	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+99	01|908|1111111|David|Tree Ave.|MH|03333
+100	01|908|6666666|JoJo|Tree Ave.|MH|07974
+101	01|212|2222222|Joe|Elm St.|GLA|01201
+102	01|212|2222222|Jim|Elm Str.|NYC|01299
+103	01|212|2222222|Eline|Elm Str.|GLA|01201
+104	01|215|3333333|Ben|Oak Ave.|P|34394
+105	01|215|4444444|Jane|Mel St.|PHI|06873
+106	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+107	44|131|5555555|Anna|High St.|EBI|EH4IDT
+108	44|141|5555555|Caral|High Str.|GL|EH4IDT
+109	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+110	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+111	?|212|2132132|Joe|Elm St.|GLA|012
+112	?|22|2221222|Jim C|Elm Str.|NYC|0299
+113	01|908|1111111|Mike|Tree Ave.|MH|07974
+114	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+115	01|908|1111111|David|Tree Ave.|MH|03333
+116	01|908|6666666|JoJo|Tree Ave.|MH|07974
+117	01|212|2222222|Joe|Elm St.|GLA|01201
+118	01|212|2222222|Jim|Elm Str.|NYC|01299
+119	01|212|2222222|Eline|Elm Str.|GLA|01201
+120	01|215|3333333|Ben|Oak Ave.|P|34394
+121	01|215|4444444|Jane|Mel St.|PHI|06873
+122	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+123	44|131|5555555|Anna|High St.|EBI|EH4IDT
+124	44|141|5555555|Caral|High Str.|GL|EH4IDT
+125	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+126	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+127	?|212|2132132|Joe|Elm St.|GLA|012
+128	?|22|2221222|Jim C|Elm Str.|NYC|0299
+129	01|908|1111111|Mike|Tree Ave.|MH|07974
+130	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+131	01|908|1111111|David|Tree Ave.|MH|03333
+132	01|908|6666666|JoJo|Tree Ave.|MH|07974
+133	01|212|2222222|Joe|Elm St.|GLA|01201
+134	01|212|2222222|Jim|Elm Str.|NYC|01299
+135	01|212|2222222|Eline|Elm Str.|GLA|01201
+136	01|215|3333333|Ben|Oak Ave.|P|34394
+137	01|215|4444444|Jane|Mel St.|PHI|06873
+138	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+139	44|131|5555555|Anna|High St.|EBI|EH4IDT
+140	44|141|5555555|Caral|High Str.|GL|EH4IDT
+141	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+142	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+143	?|212|2132132|Joe|Elm St.|GLA|012
+144	?|22|2221222|Jim C|Elm Str.|NYC|0299
+145	01|908|1111111|Mike|Tree Ave.|MH|07974
+146	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+147	01|908|1111111|David|Tree Ave.|MH|03333
+148	01|908|6666666|JoJo|Tree Ave.|MH|07974
+149	01|212|2222222|Joe|Elm St.|GLA|01201
+150	01|212|2222222|Jim|Elm Str.|NYC|01299
+151	01|212|2222222|Eline|Elm Str.|GLA|01201
+152	01|215|3333333|Ben|Oak Ave.|P|34394
+153	01|215|4444444|Jane|Mel St.|PHI|06873
+154	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+155	44|131|5555555|Anna|High St.|EBI|EH4IDT
+156	44|141|5555555|Caral|High Str.|GL|EH4IDT
+157	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+158	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+159	?|212|2132132|Joe|Elm St.|GLA|012
+160	?|22|2221222|Jim C|Elm Str.|NYC|0299
+161	01|908|1111111|Mike|Tree Ave.|MH|07974
+162	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+163	01|908|1111111|David|Tree Ave.|MH|03333
+164	01|908|6666666|JoJo|Tree Ave.|MH|07974
+165	01|212|2222222|Joe|Elm St.|GLA|01201
+166	01|212|2222222|Jim|Elm Str.|NYC|01299
+167	01|212|2222222|Eline|Elm Str.|GLA|01201
+168	01|215|3333333|Ben|Oak Ave.|P|34394
+169	01|215|4444444|Jane|Mel St.|PHI|06873
+170	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+171	44|131|5555555|Anna|High St.|EBI|EH4IDT
+172	44|141|5555555|Caral|High Str.|GL|EH4IDT
+173	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+174	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+175	?|212|2132132|Joe|Elm St.|GLA|012
+176	?|22|2221222|Jim C|Elm Str.|NYC|0299
+177	01|908|1111111|Mike|Tree Ave.|MH|07974
+178	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+179	01|908|1111111|David|Tree Ave.|MH|03333
+180	01|908|6666666|JoJo|Tree Ave.|MH|07974
+181	01|212|2222222|Joe|Elm St.|GLA|01201
+182	01|212|2222222|Jim|Elm Str.|NYC|01299
+183	01|212|2222222|Eline|Elm Str.|GLA|01201
+184	01|215|3333333|Ben|Oak Ave.|P|34394
+185	01|215|4444444|Jane|Mel St.|PHI|06873
+186	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+187	44|131|5555555|Anna|High St.|EBI|EH4IDT
+188	44|141|5555555|Caral|High Str.|GL|EH4IDT
+189	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+190	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+191	?|212|2132132|Joe|Elm St.|GLA|012
+192	?|22|2221222|Jim C|Elm Str.|NYC|0299
+193	01|908|1111111|Mike|Tree Ave.|MH|07974
+194	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+195	01|908|1111111|David|Tree Ave.|MH|03333
+196	01|908|6666666|JoJo|Tree Ave.|MH|07974
+197	01|212|2222222|Joe|Elm St.|GLA|01201
+198	01|212|2222222|Jim|Elm Str.|NYC|01299
+199	01|212|2222222|Eline|Elm Str.|GLA|01201
+200	01|215|3333333|Ben|Oak Ave.|P|34394
+201	01|215|4444444|Jane|Mel St.|PHI|06873
+202	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+203	44|131|5555555|Anna|High St.|EBI|EH4IDT
+204	44|141|5555555|Caral|High Str.|GL|EH4IDT
+205	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+206	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+207	?|212|2132132|Joe|Elm St.|GLA|012
+208	?|22|2221222|Jim C|Elm Str.|NYC|0299
+209	01|908|1111111|Mike|Tree Ave.|MH|07974
+210	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+211	01|908|1111111|David|Tree Ave.|MH|03333
+212	01|908|6666666|JoJo|Tree Ave.|MH|07974
+213	01|212|2222222|Joe|Elm St.|GLA|01201
+214	01|212|2222222|Jim|Elm Str.|NYC|01299
+215	01|212|2222222|Eline|Elm Str.|GLA|01201
+216	01|215|3333333|Ben|Oak Ave.|P|34394
+217	01|215|4444444|Jane|Mel St.|PHI|06873
+218	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+219	44|131|5555555|Anna|High St.|EBI|EH4IDT
+220	44|141|5555555|Caral|High Str.|GL|EH4IDT
+221	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+222	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+223	?|212|2132132|Joe|Elm St.|GLA|012
+224	?|22|2221222|Jim C|Elm Str.|NYC|0299
+225	01|908|1111111|Mike|Tree Ave.|MH|07974
+226	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+227	01|908|1111111|David|Tree Ave.|MH|03333
+228	01|908|6666666|JoJo|Tree Ave.|MH|07974
+229	01|212|2222222|Joe|Elm St.|GLA|01201
+230	01|212|2222222|Jim|Elm Str.|NYC|01299
+231	01|212|2222222|Eline|Elm Str.|GLA|01201
+232	01|215|3333333|Ben|Oak Ave.|P|34394
+233	01|215|4444444|Jane|Mel St.|PHI|06873
+234	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+235	44|131|5555555|Anna|High St.|EBI|EH4IDT
+236	44|141|5555555|Caral|High Str.|GL|EH4IDT
+237	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+238	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+239	?|212|2132132|Joe|Elm St.|GLA|012
+240	?|22|2221222|Jim C|Elm Str.|NYC|0299
+241	01|908|1111111|Mike|Tree Ave.|MH|07974
+242	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+243	01|908|1111111|David|Tree Ave.|MH|03333
+244	01|908|6666666|JoJo|Tree Ave.|MH|07974
+245	01|212|2222222|Joe|Elm St.|GLA|01201
+246	01|212|2222222|Jim|Elm Str.|NYC|01299
+247	01|212|2222222|Eline|Elm Str.|GLA|01201
+248	01|215|3333333|Ben|Oak Ave.|P|34394
+249	01|215|4444444|Jane|Mel St.|PHI|06873
+250	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+251	44|131|5555555|Anna|High St.|EBI|EH4IDT
+252	44|141|5555555|Caral|High Str.|GL|EH4IDT
+253	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+254	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+255	?|212|2132132|Joe|Elm St.|GLA|012
+256	?|22|2221222|Jim C|Elm Str.|NYC|0299
+257	01|908|1111111|Mike|Tree Ave.|MH|07974
+258	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+259	01|908|1111111|David|Tree Ave.|MH|03333
+260	01|908|6666666|JoJo|Tree Ave.|MH|07974
+261	01|212|2222222|Joe|Elm St.|GLA|01201
+262	01|212|2222222|Jim|Elm Str.|NYC|01299
+263	01|212|2222222|Eline|Elm Str.|GLA|01201
+264	01|215|3333333|Ben|Oak Ave.|P|34394
+265	01|215|4444444|Jane|Mel St.|PHI|06873
+266	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+267	44|131|5555555|Anna|High St.|EBI|EH4IDT
+268	44|141|5555555|Caral|High Str.|GL|EH4IDT
+269	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+270	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+271	?|212|2132132|Joe|Elm St.|GLA|012
+272	?|22|2221222|Jim C|Elm Str.|NYC|0299
+273	01|908|1111111|Mike|Tree Ave.|MH|07974
+274	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+275	01|908|1111111|David|Tree Ave.|MH|03333
+276	01|908|6666666|JoJo|Tree Ave.|MH|07974
+277	01|212|2222222|Joe|Elm St.|GLA|01201
+278	01|212|2222222|Jim|Elm Str.|NYC|01299
+279	01|212|2222222|Eline|Elm Str.|GLA|01201
+280	01|215|3333333|Ben|Oak Ave.|P|34394
+281	01|215|4444444|Jane|Mel St.|PHI|06873
+282	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+283	44|131|5555555|Anna|High St.|EBI|EH4IDT
+284	44|141|5555555|Caral|High Str.|GL|EH4IDT
+285	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+286	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+287	?|212|2132132|Joe|Elm St.|GLA|012
+288	?|22|2221222|Jim C|Elm Str.|NYC|0299
+289	01|908|1111111|Mike|Tree Ave.|MH|07974
+290	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+291	01|908|1111111|David|Tree Ave.|MH|03333
+292	01|908|6666666|JoJo|Tree Ave.|MH|07974
+293	01|212|2222222|Joe|Elm St.|GLA|01201
+294	01|212|2222222|Jim|Elm Str.|NYC|01299
+295	01|212|2222222|Eline|Elm Str.|GLA|01201
+296	01|215|3333333|Ben|Oak Ave.|P|34394
+297	01|215|4444444|Jane|Mel St.|PHI|06873
+298	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+299	44|131|5555555|Anna|High St.|EBI|EH4IDT
+300	44|141|5555555|Caral|High Str.|GL|EH4IDT
+301	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+302	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+303	?|212|2132132|Joe|Elm St.|GLA|012
+304	?|22|2221222|Jim C|Elm Str.|NYC|0299
+305	01|908|1111111|Mike|Tree Ave.|MH|07974
+306	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+307	01|908|1111111|David|Tree Ave.|MH|03333
+308	01|908|6666666|JoJo|Tree Ave.|MH|07974
+309	01|212|2222222|Joe|Elm St.|GLA|01201
+310	01|212|2222222|Jim|Elm Str.|NYC|01299
+311	01|212|2222222|Eline|Elm Str.|GLA|01201
+312	01|215|3333333|Ben|Oak Ave.|P|34394
+313	01|215|4444444|Jane|Mel St.|PHI|06873
+314	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+315	44|131|5555555|Anna|High St.|EBI|EH4IDT
+316	44|141|5555555|Caral|High Str.|GL|EH4IDT
+317	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+318	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+319	?|212|2132132|Joe|Elm St.|GLA|012
+320	?|22|2221222|Jim C|Elm Str.|NYC|0299
+321	01|908|1111111|Mike|Tree Ave.|MH|07974
+322	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+323	01|908|1111111|David|Tree Ave.|MH|03333
+324	01|908|6666666|JoJo|Tree Ave.|MH|07974
+325	01|212|2222222|Joe|Elm St.|GLA|01201
+326	01|212|2222222|Jim|Elm Str.|NYC|01299
+327	01|212|2222222|Eline|Elm Str.|GLA|01201
+328	01|215|3333333|Ben|Oak Ave.|P|34394
+329	01|215|4444444|Jane|Mel St.|PHI|06873
+330	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+331	44|131|5555555|Anna|High St.|EBI|EH4IDT
+332	44|141|5555555|Caral|High Str.|GL|EH4IDT
+333	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+334	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+335	?|212|2132132|Joe|Elm St.|GLA|012
+336	?|22|2221222|Jim C|Elm Str.|NYC|0299
+337	01|908|1111111|Mike|Tree Ave.|MH|07974
+338	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+339	01|908|1111111|David|Tree Ave.|MH|03333
+340	01|908|6666666|JoJo|Tree Ave.|MH|07974
+341	01|212|2222222|Joe|Elm St.|GLA|01201
+342	01|212|2222222|Jim|Elm Str.|NYC|01299
+343	01|212|2222222|Eline|Elm Str.|GLA|01201
+344	01|215|3333333|Ben|Oak Ave.|P|34394
+345	01|215|4444444|Jane|Mel St.|PHI|06873
+346	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+347	44|131|5555555|Anna|High St.|EBI|EH4IDT
+348	44|141|5555555|Caral|High Str.|GL|EH4IDT
+349	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+350	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+351	?|212|2132132|Joe|Elm St.|GLA|012
+352	?|22|2221222|Jim C|Elm Str.|NYC|0299
+353	01|908|1111111|Mike|Tree Ave.|MH|07974
+354	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+355	01|908|1111111|David|Tree Ave.|MH|03333
+356	01|908|6666666|JoJo|Tree Ave.|MH|07974
+357	01|212|2222222|Joe|Elm St.|GLA|01201
+358	01|212|2222222|Jim|Elm Str.|NYC|01299
+359	01|212|2222222|Eline|Elm Str.|GLA|01201
+360	01|215|3333333|Ben|Oak Ave.|P|34394
+361	01|215|4444444|Jane|Mel St.|PHI|06873
+362	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+363	44|131|5555555|Anna|High St.|EBI|EH4IDT
+364	44|141|5555555|Caral|High Str.|GL|EH4IDT
+365	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+366	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+367	?|212|2132132|Joe|Elm St.|GLA|012
+368	?|22|2221222|Jim C|Elm Str.|NYC|0299
+369	01|908|1111111|Mike|Tree Ave.|MH|07974
+370	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+371	01|908|1111111|David|Tree Ave.|MH|03333
+372	01|908|6666666|JoJo|Tree Ave.|MH|07974
+373	01|212|2222222|Joe|Elm St.|GLA|01201
+374	01|212|2222222|Jim|Elm Str.|NYC|01299
+375	01|212|2222222|Eline|Elm Str.|GLA|01201
+376	01|215|3333333|Ben|Oak Ave.|P|34394
+377	01|215|4444444|Jane|Mel St.|PHI|06873
+378	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+379	44|131|5555555|Anna|High St.|EBI|EH4IDT
+380	44|141|5555555|Caral|High Str.|GL|EH4IDT
+381	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+382	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+383	?|212|2132132|Joe|Elm St.|GLA|012
+384	?|22|2221222|Jim C|Elm Str.|NYC|0299
+385	01|908|1111111|Mike|Tree Ave.|MH|07974
+386	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+387	01|908|1111111|David|Tree Ave.|MH|03333
+388	01|908|6666666|JoJo|Tree Ave.|MH|07974
+389	01|212|2222222|Joe|Elm St.|GLA|01201
+390	01|212|2222222|Jim|Elm Str.|NYC|01299
+391	01|212|2222222|Eline|Elm Str.|GLA|01201
+392	01|215|3333333|Ben|Oak Ave.|P|34394
+393	01|215|4444444|Jane|Mel St.|PHI|06873
+394	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+395	44|131|5555555|Anna|High St.|EBI|EH4IDT
+396	44|141|5555555|Caral|High Str.|GL|EH4IDT
+397	?|131|55535155|Asuna|High St.|EBI|EH4IDaTe
+398	?|141|5542355|Agxcul|High Str.|NOTGL|EH43IDT
+399	?|212|2132132|Joe|Elm St.|GLA|012
+400	?|22|2221222|Jim C|Elm Str.|NYC|0299
+possibleValue:
+0#1,2,3,4,5,6
+01
+44
+
+2.操作说明：
+输入数据文件夹input包含两个文件：填充所需信息文件——possibleValue（此文件第一行为填充所需的文件信息，格式：待填充行号#依赖行号1，依赖行号2，...例如0#1,2,3,4；以下每行为待填充列的一个可能的取值）；待填充文件/缺失数据文件——testdata（格式见testdata）
+运行前需将input上传至hdfs，将本地的ReplaceMissingValue文件夹删除，运行结果在本地的ReplaceMissingValue/output中
+将MF.jar 与 configuration.xml 放在同一目录下即可,或者在运行程序的命令行里加入configuration.xml的绝对路径
+运行命令： hadoop jar MF.jar input/testdata configuration.xml
+
+3.配置文件——configuration.xml
+<?xml version="1.0"?>
+<configuration>
+	<property>
+		<name>method</name>
+		<value>classify</value>
+		<description>缺失值填充算法</description>
+	</property>
+	<property>
+		<name>workdir</name>
+		<value>ReplaceMissingValue/</value>
+		<description>工作目录</description>
+	</property>
+	<property>
+		<name>numVar</name>
+		<value>none</value>
+		<description></description>
+	</property>
+	<property>
+		<name>catVar</name>
+		<value>none</value>
+		<description></description>
+	</property>
+	<property>
+		<name>PossibleValue</name>
+		<value>input/possibleValue</value>
+		<description>存储待填充列可能取值(所有已有的取值)的文件目录</description>
+	</property>
+</configuration>
+
+____________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________
+不一致数据修复模块
+1.测试用例
+cfd.txt:
+$CC,ZIP@STR#44,_&_#0,6,4#
+$CC,AC,PN@STR,CT,ZIP#01,908,_&_,MH,_#01,212,_&_,NYC,_#0,1,2,4,5,6#
+$CC,AC@CT#01,215&PHI#44,141&GLA#0,1,5#
+%
+
+f0.txt:
+CC	AC	PN	NM	STR	CT	ZIP
+01	908	1111111	Mike	Tree Ave.	MH	07974
+01	908	1111111	Rick	Tree Ave Str.	NYC	07974
+01	908	1111111	David	Tree Ave.	MH	03333
+01	908	6666666	JoJo	Tree Ave.	MH	07974
+01	212	2222222	Joe	Elm St.	GLA	01201
+01	212	2222222	Jim	Elm Str.	NYC	01299
+01	212	2222222	Eline	Elm Str.	GLA	01201
+01	215	3333333	Ben	Oak Ave.	P	34394
+01	215	4444444	Jane	Mel St.	PHI	06873
+44	131	4444444	Ian	High Str.	EDI	EH4IDT
+44	131	5555555	Anna	High St.	EBI	EH4IDT
+44	141	5555555	Caral	High Str.	GL	EH4IDT
+
+2.操作说明：
+result is in PostProcess
+运行前准备工作：将CFD.jar文档 input文件夹 configuration.xml放在同一目录下，并将该目录下的out_RepairUnconsist文件夹删掉。input为输入数据文件夹包含cfd.txt(cfds文件用于cfds一致性检测后续的\repair\check)f0.txt(脏数据)out_RepairUnconsist是将从cfds上拷回来的运行结果，包括中间结果
+运行命令：hadoop jar CFD.jar callUI.RepairUnconsist configuration.xml input
+
+3.配置文件——configuration.xml
+<?xml version="1.0"?>
+<configuration>
+
+ <property>
+  <name>in.txt</name>
+  <value>input/f0.txt</value>
+  <description>脏数据文件</description>
+ </property>
+<property>
+  <name>in.cfd</name>
+  <value>input/cfd.txt</value>
+  <description>cfd文件</description>
+ </property>
+<property>
+  <name>in.weight1</name>
+  <value>1,0.9,0.9,0.8,0.8,0.8,0.8</value>
+  <description>权重用于repair</description>
+</property>
+<property>
+  <name>workdir</name>
+  <value>RepairUnconsist/</value>
+  <description>工作目录</description>
+ </property>
+<property>
+  <name>num.reduceTask</name>
+  <value>2</value>
+  <description>number of reducer</description>
+ </property>
+
+</configuration>
+
+____________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________
+实体识别模块
+1.测试用例
+111：
+ismar|2003|michael wagner|p. kohler,holger regenbrecht,|
+presence|2004|michael wagner|holger regenbrecht,p. kohler,|
+virtual reality|2002|michael wagner|holger regenbrecht,gregory baratoff,|
+computers & graphics|2001|michael wagner|holger regenbrecht,gregory baratoff,|&&
+
+pattern recognition|1998|michael wagner|tuan d. pham,|
+icpr|2000|michael wagner|tuan d. pham,|
+jaciii|1999|michael wagner|tuan d. pham,|
+icip|2000|michael wagner|tuan d. pham,|
+pattern recognition|2000|michael wagner|tuan d. pham,|
+pattern recognition|1999|michael wagner|tuan d. pham,|
+ijprai|2000|michael wagner|tuan d. pham,|&&
+
+fuzz-ieee|2001|michael wagner|dat tran,|
+pattern recognition letters|1999|michael wagner|dat tran,|
+afss|2002|michael wagner|dat tran,|
+ijprai|2002|michael wagner|dat tran,|
+kes [4]|2005|michael wagner|dat tran,|
+afss|2002|michael wagner|dat tran,|
+afss|2002|michael wagner|dat tran,|&&
+
+int. j. hum.-comput. stud.|1995|michael wagner|doug mahar,renee napier,william laverty,ron henderson,michael hiron,|
+int. j. hum.-comput. stud.|1996|michael wagner|william laverty,ron henderson,michael hiron,|
+int. j. hum.-comput. stud.|1995|michael wagner|renee napier,william laverty,doug mahar,ron henderson,michael hiron,|&&
+
+journal of computational chemistry|2002|michael wagner|jaroslaw meller,ron elber,|
+journal of computational biology|2005|michael wagner|rafal adamczak,jaroslaw meller,|
+math. program.|2004|michael wagner|ron elber,jaroslaw meller,|&&
+
+aaai/iaai|2002|michael wagner|gregory f. cooper,andrew w. moore,weng-keen wong,|
+icml|2003|michael wagner|andrew w. moore,weng-keen wong,gregory f. cooper,|&&
+
+infovis|2004|michael wagner|eben myers,|
+ieee visualization|2005|michael wagner|eben myers,|&&
+
+icac|2004|ajay gupta|shree raman,mukesh k. mohania,manish bhide,mukul joshi,|
+policy|2002|ajay gupta|mukesh k. mohania,upendra sharma,vishal s. batra,jaijit bhattacharya,|
+icde|2003|ajay gupta|sandeep pandey,mukesh k. mohania,manish bhide,|
+icde|2003|ajay gupta|manish bhide,mukesh k. mohania,|
+ec-web|2004|ajay gupta|manish bhide,mukesh k. mohania,|
+dexa|2004|ajay gupta|mukul joshi,mukesh k. mohania,manish bhide,|&&
+
+raid|2003|ajay gupta|r. sekar,|
+acm conference on computer and communications security|2002|ajay gupta|r. sekar,s. zhou,h. yang,|&&
+
+acsac|2004|ajay gupta|daniel c. duvarney,|&&
+
+hpcn|1996|ajay gupta|patricia ealy,elise de doncker,|
+hpcn|1995|ajay gupta|patricia ealy,elise de doncker,|
+pdpta|1996|ajay gupta|elise de doncker,jay ball,patricia ealy,|
+international conference on supercomputing|1996|ajay gupta|jay ball,patricia ealy,elise de doncker,alan genz,|
+parallel computing|1998|ajay gupta|elise de doncker,|&&
+
+iaai|1991|ajay gupta|chris preist,yossi lichtenstein,|
+alpuk|1991|ajay gupta|yossi lichtenstein,bob welham,|&&
+
+NULL|2005|bing liu|robert l. grossman,|
+kdd|2003|bing liu|robert l. grossman,yanhong zhai,|
+csb|2003|bing liu|robert l. grossman,|
+ieee intelligent systems|2004|bing liu|robert l. grossman,yanhong zhai,|&&
+
+pricai|1998|bing liu|ke wang,|
+pricai|1998|bing liu|ke wang,|
+pakdd|1999|bing liu|wynne hsu,ke wang,shu chen,|
+ijcai [2]|1997|bing liu|wynne hsu,|
+dawak|2000|bing liu|wynne hsu,|
+cikm|1999|bing liu|ke wang,|
+aaai|2000|bing liu|wynne hsu,minqing hu,|
+aaai/iaai|vol. 1, 1996|bing liu|wynne hsu,|
+kdd|1997|bing liu|wynne hsu,shu chen,|
+kdd|2000|bing liu|wynne hsu,tok wang ling,mong-li lee,|
+kdd|2000|bing liu|minqing hu,wynne hsu,|
+kdd|1998|bing liu|ke wang,|
+ieee trans. knowl. data eng.|1999|bing liu|wynne hsu,hing-yan lee,|
+computer-aided design|2000|bing liu|wynne hsu,|&&
+
+dasfaa|2004|bing liu|gao cong,wee sun lee,|
+icml|2002|bing liu|wee sun lee,philip s. yu,xiaoli li,|
+icml|2003|bing liu|wee sun lee,|
+icdm|2003|bing liu|philip s. yu,yang dai,xiaoli li,wee sun lee,|
+icdm|2002|bing liu|gao cong,|
+cikm|2000|bing liu|philip s. yu,|
+aaai|2004|bing liu|philip s. yu,wee sun lee,xiaoli li,|
+ijcia|2003|bing liu|xiaoli li,|
+ecml|2005|bing liu|xiaoli li,|
+cikm|2002|bing liu|xiaoli li,minqing hu,|
+aaai|2004|bing liu|minqing hu,|&&
+
+www|2005|bing liu|minqing hu,|
+www [alternate track papers & posters]|2004|bing liu|xiaoli li,|
+kdd|2004|bing liu|minqing hu,|
+kdd|2002|bing liu|xiaoli li,|&&
+
+p:
+0.08200862703138811|0.2013110229000552|0.6165086817729184|0.5543625002143807|
+0.9283724523300818|0.6504597862001691|0.8232749337484225|0.6823296665720511|
+0.21400055688518438|0.09476773262705107|0.5463337541182954|0.2530673147535769|
+0.5035633348233934|0.8358714179095568|0.2676837682654398|0.543872242880475|
+0.9828575147468394|0.05326486389487817|0.4574385759535974|0.4533055228811992|
+0.47379235924445606|0.6799884169843846|0.722352601383048|0.2601197075898035|
+0.4130265609990288|0.40744246678871265|0.07151630040556378|0.6385844537599457|
+0.13181073774340812|0.40321832950740344|0.373592138648832|0.1298254601148947|
+0.41228580055498787|0.7838475071241329|0.6707829907959091|0.8049257126372943|
+0.08943293208578662|0.7486272985180632|0.26179467686291924|0.29791960082965585|
+0.41806559903899265|0.5511894002397574|0.3693753338029411|0.7354440784032336|
+0.030700261102774573|0.1622351465100642|0.7675838359500413|0.34469363504101325|
+0.5748368887784279|0.5598697676348388|0.9597603569253323|0.6824583762043666|
+0.5371265072607391|0.07322490230746359|0.3702422777907195|0.4954077651739959|
+0.3370973899825547|0.10056720317704237|0.5411887663160239|0.19541522452964444|
+0.5045577353958108|0.8248481420524956|0.5104483146864632|0.8136014042249338|
+0.6424874106734076|0.2576583608715669|0.38722282442495426|0.08290703674543765|
+0.9211768267510078|0.056807309147297924|0.6393530589172174|0.9913889330730549|
+0.04956623700845164|0.08325696303011976|0.7593702866610457|0.7470655862771358|
+0.02618439746926693|0.5898964946414109|0.7860289043072386|0.6000214166638692|
+0.48478030817385076|0.26765163104897294|0.6238556070847855|0.3786121354353722|
+0.11868732738620957|0.11368170134621192|0.22532104341170023|0.9139955342448217|
+0.4931547164791992|0.23192374275383987|0.47855944805409356|0.7508458021625134|
+0.5363258455696835|0.22800178259550674|0.07813305710936558|0.6719914742973049|
+0.13723899586457133|0.818526941227116|0.7471579050004907|0.6008508592237062|
+0.5731708380341611|0.6390716377269857|0.9261776320131174|0.38792029683687446|
+0.938838612790869|0.005609283008388588|0.44749293574367743|0.8362048710861207|
+0.35642230172529843|0.560968549729963|0.7732241204865177|0.07536274469375592|
+0.5080631599772256|0.32085907688905035|0.09120462321057077|0.0554682065484885|
+0.9514403643335733|0.6232831651777184|0.9348737826113492|0.49868017780883844|
+0.75422307673838|0.8806562431075305|0.021657245254651847|0.12073688451863973|
+0.21464009950611063|0.8357162179566988|0.6888941492228284|0.3140793066834423|
+0.8231053226910713|0.2303098790875292|0.6471897729910889|0.7705394027598463|
+0.16378129624529303|0.410402370251027|0.7681436806335707|0.7139116001837289|
+0.15516007445152946|0.4111634666449965|0.276722510573168|0.5113590972217432|
+0.8851844940196527|0.49274222014051317|0.028118078206609276|0.4374889916839778|
+0.30912905835762594|0.9303492338206888|0.514750833101623|0.27606344918643577|
+0.24740467334363925|0.10152409513977445|0.8711494159479689|0.2616967960025024|
+0.445647104550022|0.5589724729646922|0.42275750462439876|0.5875210310287955|
+0.9408935333721495|0.8291163457605307|0.2592892034099359|0.3346853493557185|
+0.6153481985475505|0.1345073356803277|0.9040745105666979|0.21568800701045499|
+0.6131819176297689|0.10251200429384455|0.3979070462644251|0.9659214859498153|
+0.24600701215414222|0.7931853756404033|0.01922607281335742|0.5664449916652107|
+0.11911340137699555|0.05600645583914432|0.42203565075913707|0.7358810281594148|
+0.4732474804051745|0.30815797990362026|0.18878367002470076|0.29046551909367146|
+0.1556605942828161|0.31628984521576986|0.6674938607676469|0.03866381369460292|
+0.2093493393353274|0.4592139075900318|0.4907646792538437|0.8503978123439547|
+0.8008548962344245|0.25073526166465054|0.3588185108990216|0.42081220573771827|
+0.0946842881333756|0.6098333969183276|0.5096055732053102|0.03464050269923735|
+0.7263616250318985|0.47966389598463177|0.7960369259391378|0.32961452749489806|
+0.7263126085096109|0.9173597837923624|0.44374125195003367|0.6559939209937385|
+0.10323114203991934|0.703368577089511|0.37231076813291175|0.13417453850711858|
+0.808271763280295|0.852070159994925|0.4288213465790518|0.9234682142749708|
+0.4703576039717041|0.14467681557507106|0.004482816710453252|0.5325283569128263|
+0.11808808266631954|0.9509262004406819|0.28359525987548573|0.22552935114029116|
+0.08517657037426529|0.15783463462230551|0.8085578356517696|0.7080899971609635|
+0.434042993255245|0.9817863671713258|0.13549665482723994|0.31306445533010296|
+0.5261324169873333|0.8044925467941193|0.1021486894099406|0.8487066665961623|
+0.817724682057061|0.943860776007057|0.6329590741036296|0.12034743404819348|
+0.566447239030471|0.44757468138021694|0.06591918296235455|0.8916053405921985|
+0.8963967623615482|0.5801900899996183|0.7014936918910132|0.7122866907688457|
+0.5887220977331711|0.663812651815464|0.646054540040766|0.6075114690828364|
+0.03971513930138615|0.3279294797318537|0.05056053103334934|0.09623541961463067|
+0.05990224200839822|0.025724981561914384|0.5297911970754434|0.3872215502329942|
+0.5753241575411522|0.8822190667630749|0.8882643927419166|0.8866464573290367|
+0.8361370617268213|0.5538238195408239|0.276036714945456|0.3439104315499397|
+0.437863474865513|0.7994220616285593|0.5509067647648876|0.060852480500480866|
+0.3170665609543889|0.8898298156589051|0.9331113892128222|0.5944546792966766|
+0.8959167664384967|0.8155116923174982|0.004424918028095193|0.29425289076251115|
+0.7190652640726862|0.49167659694250065|0.7256426813075338|0.8330534651030966|
+0.25143365135308227|0.8053885742219745|0.424749375681295|0.6131888983330631|
+0.986974903560472|0.40108597559425285|0.6426437309662121|0.560427871052802|
+0.6561559238912525|0.5589091629958715|0.31411129983738806|0.35378758782403275|
+0.11385703332383101|0.38449539654116927|0.008807124545475387|0.5818802484056919|
+0.4395794885643294|0.799407216987774|0.8603306297616211|0.6650566480473832|
+0.8882970877166954|0.49811836090789274|0.37104538067845005|0.6374945833882771|
+0.5929832527170888|0.12048893303850683|0.4961164944464852|0.04451078071704717|
+0.3387907991711715|0.3779197874694904|0.28230912672982666|0.2777592295403367|
+0.30405593618122184|0.7668834066358877|0.8654111580124249|0.644611030188587|
+0.3947444573265224|0.8052868324507341|0.8147144796719601|0.347893295326009|
+0.686652550950536|0.4351294601969503|0.6538085067800181|0.33829854832477235|
+0.5336202578523691|0.34917697326399355|0.8840107165961232|0.6941578006287678|
+0.1002113390001127|0.5198800955894449|0.9900787462356703|0.7819036417482681|
+0.4337576948637405|0.13552437574161502|0.7174194430076067|0.9554331069052163|
+0.7033627200561372|0.4816060393459646|0.3758299367568735|0.9637116379213333|
+0.9024027592135933|0.04468561284742678|0.04687670919722786|0.5533436079572783|
+0.1362612982089375|0.2614793163075382|0.35033841629868456|0.9764667227875284|
+0.5984757251970795|0.8877064771295631|0.8597092008815493|0.24421095512972002|
+0.47617223330679004|0.9192181934901705|0.34757861224760256|0.002095085249655404|
+0.31960893777589616|0.36219067922776604|0.7887756638317317|0.8461173179826451|
+0.8608434507061216|0.9196750483093572|0.4524838510602437|0.7469284690648633|
+0.8729860310575037|0.8385518096189069|0.47410499415712404|0.004359708376734384|
+
+2.操作说明
+运行此程序前，请先运行MakeProbability（在MakeProbabilityFile包内，已经生成了jar文件）以生成所需的概率文件
+注意：由于概率文件是生成的随机数，故每次运行结果均不相同；若想得到相同的结果请使用同一概率文件
+概率文件必须命名为p,其位置在"/usr/qingxi/probabilitydir/p"，请在运行程序前将概率文件放到相应位置或者修改配置文件
+配置文件必须命名为configurational.xml	其中有一项描述配置文件位置的属性“org.er.config”需要根据具体情况改变其值
+运行程序时，请将ER.jar和数据源文件放在同一目录下运行
+此时运行命令为：hadoop jar ER.jar cn.edu.hit.er.mapred.EntityRecognition 111 configurational.xml                其中111为输入数据文件的名字，而不是文件夹名
+
+3.配置文件——configuration.xml
+<?xml version="1.0"?>
+
+<configuration>
+
+	<property>
+  		<name>org.er.workdir</name>
+  		<value>EntityRecognition/</value>
+  		<description>工作目录</description>
+	</property>
+	<property>
+		<name>org.er.config</name>
+		<value>/home/ning/桌面/configuration.xml</value>
+		<description>配置文件存放位置</description>
+	</property>
+	<property>
+  		<name>org.er.propertyNum</name>
+  		<value>4</value>
+  		<description>属性维度</description>
+	</property>
+	<property>
+		<name>org.er.probabilitydir</name>
+		<value>/home/ning/Desktop/test/</value>
+		<description>概率文件目录，用于MR3</description>
+	</property>
+	<property>
+  		<name>org.er.ratio</name>
+  		<value>0.2,0.0,0.4,0.4</value>
+  		<description>各个属性列所占比例，逗号分隔</description>
+	</property>
+	
+	<property>
+  		<name>org.er.limit</name>
+  		<value>0.003067</value>
+  		<description>阈值</description>
+	</property>
+	<property>
+  		<name>org.er.lamta</name>
+  		<value>0.3</value>
+  		<description>lamta,用于Main()函数</description>
+	</property>
+	
+	<property>
+  		<name>org.er.num.reduceTask</name>
+ 		<value>2</value>
+  		<description></description>
+	</property>
+	
+</configuration>
+
+____________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________
+真值发现模块
+1.测试用例
+input.txt:
+1	01|908|1111111|Mike|Tree Ave.|MH|07974
+2	01|908|1111111|Rick|Tree Ave Str.|NYC|07974
+3	01|908|1111111|David|Tree Ave.|MH|03333
+4	01|908|6666666|JoJo|Tree Ave.|MH|07974
+5	01|212|2222222|Joe|Elm St.|GLA|01201
+6	01|212|2222222|Jim|Elm Str.|NYC|01299
+7	01|212|2222222|Eline|Elm Str.|GLA|01201
+8	01|215|3333333|Ben|Oak Ave.|P|34394
+9	01|215|4444444|Jane|Mel St.|PHI|06873
+10	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+11	44|131|5555555|Anna|High St.|EBI|EH4IDT
+12	44|141|5555555|Caral|High Str.|GL|EH4IDT
+1	01|908|1111111|Mike|Tree Ave.|MH|07974
+1	01|908|1111111|Mike|Tree Ave.|MH|07974
+1	01|908|1111111|Mike|Tree Ave.|MH|07974
+1	00|908|1111111|Mike|Tree Ave.|MH|07974
+6	01|212|2222222|Jim|Elm Str.|NYC|01299
+6	01|212|2222222|Jim|Elm Str.|NYC|01298
+8	01|215|3333333|Ben|Oak Ave.|P|34394
+8	01|212|3333333|Ben|Oak Ave.|P|34394
+8	01|215|3333353|Ben|Oak Ave.|P|34394
+8	01|215|3333333|Ben1|Oak Ave.|P|34394
+8	011|215|3333333|Ben|Oak Ave.|P|34394
+8	011|215|3333333|Ben|Oak Ave.|P|34394
+8	011|215|3333333|Ben|Oak Ave.|P|34394
+8	012|215|3333333|Ben|Oak Ave.|P|34394
+9	01|215|4444444|Jane|Mel St.|PHI|06873
+9	01|215|4444444|Jane|Mel St.|PHI|06873
+10	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+10	44|131|4444444|Ian|High Str.|EDI|EH4IDT
+10	44|132|4444444|Ian|High Str.|EDI|EH4IDT
+12	44|141|5555555|Caral|High Str.|GL|EH4IDT
+12	44|142|5555555|Caral|High Str.|GL|EH4IDT
+12	44|142|5555555|Caral|High Str.|GL|EH4IDT
+12	44|141|5555555|Caral|High Str.|GL|EH4IDT
+
+2.操作说明
+输入数据格式:实体ID	Attribute List
+运行之前需将input文件夹（内含输入文件）放到hdfs上，命令：
+	hadoop fs -put input input
+运行命令:
+	hadoop jar TD.jar configuration.xml input
+输出文件为output，程序运行结束后会自动将工作目录拷回本地，工作目录为TruthDiscovery
+
+3.配置文件——configuration.xml
+<?xml version="1.0"?>
+
+<configuration>
+
+	<property>
+  		<name>org.er.workdir</name>
+  		<value>TruthDiscovery/</value>
+  		<description>工作目录</description>
+	</property>
+	<property>
+		<name>org.er.config</name>
+		<value>/home/ning/workspace/configuration.xml</value>
+		<description>配置文件存放位置</description>
+	</property>
+	<property>
+  		<name>org.er.propertyNum</name>
+  		<value>7</value>
+  		<description>属性维度</description>
+	</property>
+	<property>
+  		<name>org.er.num.reduceTask</name>
+ 		<value>2</value>
+  		<description>并行度</description>
+	</property>
+	
+</configuration>

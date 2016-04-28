@@ -1,0 +1,5 @@
+res is in PostProcess
+运行前准备工作：将CFD.jar文档 input文件夹 configuration.xml放在同一目录下，并将该目录下的out_RepairUnconsist文件夹删掉。input为输入数据文件夹包含cfd.txt(cfds文件用于cfds一致性检测后续的\repair\check)f0.txt(脏数据)out_RepairUnconsist是将从cfds上拷回来的运行结果，包括中间结果
+运行命令：hadoop jar CFD.jar callUI.RepairUnconsist configuration.xml input
+
+不要用javac,jar命令生成jar文件，该方法生成的jar文件不能正常运行，应直接从eclipse中导出

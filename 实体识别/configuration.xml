@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<configuration>
+
+	<property>
+  		<name>org.er.workdir</name>
+  		<value>EntityRecognition/</value>
+  		<description>工作目录</description>
+	</property>
+	<property>
+		<name>org.er.config</name>
+		<value>/home/ning/Desktop/data_cleaning_2015.01.20/实体识别/configuration.xml</value>
+		<description>配置文件存放位置</description>
+	</property>
+	<property>
+  		<name>org.er.propertyNum</name>
+  		<value>4</value>
+  		<description>属性维度</description>
+	</property>
+	<property>
+  		<name>org.er.ratio</name>
+  		<value>0.2,0.0,0.4,0.4</value>
+  		<description>各个属性列所占比例，逗号分隔</description>
+	</property>
+	
+	<property>
+  		<name>org.er.limit</name>
+  		<value>0.003067</value>
+  		<description>阈值</description>
+	</property>
+	<property>
+  		<name>org.er.lamta</name>
+  		<value>0.3</value>
+  		<description>lamta,用于Main()函数</description>
+	</property>
+	
+	<property>
+  		<name>org.er.num.reduceTask</name>
+ 		<value>2</value>
+  		<description></description>
+	</property>
+	
+</configuration>
+

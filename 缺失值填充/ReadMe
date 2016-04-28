@@ -1,0 +1,4 @@
+输入数据文件夹input包含两个文件：填充所需信息文件——possibleValue（此文件第一行为填充所需的文件信息，格式：待填充行号#依赖行号1，依赖行号2，...例如0#1,2,3,4；以下每行为待填充列的一个可能的取值）；待填充文件/缺失数据文件——testdata（格式见testdata）
+运行前需将input上传至hdfs，将本地的ReplaceMissingValue文件夹删除，运行结果在本地的ReplaceMissingValue/output中
+将MF.jar 与 configuration.xml 放在同一目录下即可,或者在运行程序的命令行里加入configuration.xml的绝对路径
+运行命令： hadoop jar MF.jar input/testdata configuration.xml

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<configuration>
+
+ <property>
+  <name>in.txt</name>
+  <value>input/f0.txt</value>
+  <description>脏数据文件</description>
+ </property>
+<property>
+  <name>in.cfd</name>
+  <value>input/cfd.txt</value>
+  <description>cfd文件</description>
+ </property>
+<property>
+  <name>in.weight1</name>
+  <value>1,0.9,0.9,0.8,0.8,0.8,0.8</value>
+  <description>权重用于repair</description>
+</property>
+<property>
+  <name>workdir</name>
+  <value>RepairUnconsist/</value>
+  <description>工作目录</description>
+ </property>
+<property>
+  <name>num.reduceTask</name>
+  <value>2</value>
+  <description>number of reducer</description>
+ </property>
+
+</configuration>

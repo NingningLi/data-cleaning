@@ -1,0 +1,3 @@
+硬件环境：cpu:Intel  Core i5-2400CPU @ 3.10GHz x 4	内存：DDR3-2G x 2	硬盘：500G
+软件环境：操作系统：ubuntu 12.04 	内核版本：3.13.0-44-generic	jdk版本：1.7.0_40	ssh版本：OpenSSH_5.9p1	hadoop版本：1.2.1
+软件开发环境：eclipse Juno Service Release 2

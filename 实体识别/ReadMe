@@ -1,0 +1,10 @@
+运行此程序前，请先运行MakeProbability（在MakeProbabilityFile包内，已经生成了jar文件）以生成所需的概率文件
+注意：由于概率文件是生成的随机数，故每次运行结果均不相同；若想得到相同的结果请使用同一概率文件
+概率文件必须命名为p,其位置在"/usr/qingxi/probabilitydir/p"，请在运行程序前将概率文件放到相应位置或者修改配置文件
+配置文件必须命名为configurational.xml	其中有一项描述配置文件位置的属性“org.er.config”需要根据具体情况改变其值
+运行程序时，请将ER.jar和数据源文件放在同一目录下运行
+此时运行命令为：hadoop jar ER.jar cn.edu.hit.er.mapred.EntityRecognition 111 configuration.xml                其中111为输入数据文件的名字，而不是文件夹名
+
+rm -r out
+rm final_res
+rm final_pro

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<configuration>
+	<property>
+		<name>method</name>
+		<value>classify</value>
+		<description>缺失值填充算法</description>
+	</property>
+	<property>
+		<name>workdir</name>
+		<value>ReplaceMissingValue/</value>
+		<description>工作目录</description>
+	</property>
+	<property>
+		<name>numVar</name>
+		<value>none</value>
+		<description></description>
+	</property>
+	<property>
+		<name>catVar</name>
+		<value>none</value>
+		<description></description>
+	</property>
+	<property>
+		<name>PossibleValue</name>
+		<value>input/possibleValue</value>
+		<description>存储待填充列可能取值(所有已有的取值)的文件目录</description>
+	</property>
+</configuration>

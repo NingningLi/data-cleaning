@@ -1,0 +1,7 @@
+输入数据格式:实体ID	Attribute List
+运行之前需将input文件夹（内含输入文件）放到hdfs上，命令：
+	hadoop fs -put input input
+运行命令:
+	hadoop jar TD.jar configuration.xml input
+输出文件为output，程序运行结束后会自动将工作目录拷回本地，工作目录为TruthDiscovery
+可运行脚本start.sh
